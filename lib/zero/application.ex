@@ -7,7 +7,6 @@ defmodule Zero.Application do
 
     # Define workers and child supervisors to be supervised
     children = [
-    #      worker(Task, [fn -> init_network() end], restart: :transient, id: Nerves.Init.Network),
       worker(Picam.Camera, []),
       Plug.Adapters.Cowboy.child_spec(:http, Zero.Router, [], [port: 8000]),
     ]
@@ -17,5 +16,4 @@ defmodule Zero.Application do
     opts = [strategy: :one_for_one, name: Zero.Supervisor]
     Supervisor.start_link(children, opts)
   end
-
 end
