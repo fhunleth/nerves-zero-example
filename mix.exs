@@ -59,11 +59,13 @@ defmodule Zero.Mixfile do
   # Specify target specific dependencies
   def deps("host"), do: []
   def deps("rpi0") do
-    [{:nerves_system_rpi0, "~> 0.13.0", runtime: false},
+    [{:nerves_system_rpi0, "~> 0.15", runtime: false},
      {:nerves_runtime, "~> 0.3"},
      {:bootloader, "~> 0.1"},
      {:nerves_init_zero, git: "https://github.com/fhunleth/nerves_init_zero.git", branch: "master"},
-     {:picam, "~> 0.1"}]
+     {:picam, "~> 0.1"},
+     {:cowboy, "~> 1.0.0"},
+     {:plug, "~> 1.0"}]
   end
 
   # We do not invoke the Nerves Env when running on the Host
