@@ -1,5 +1,6 @@
 defmodule Zero.Application do
   use Application
+
   # See http://elixir-lang.org/docs/stable/elixir/Application.html
   # for more information on OTP Applications
   def start(_type, _args) do
@@ -7,8 +8,6 @@ defmodule Zero.Application do
 
     # Define workers and child supervisors to be supervised
     children = [
-      worker(Picam.Camera, []),
-      Plug.Adapters.Cowboy.child_spec(:http, Zero.Router, [], [port: 8000]),
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html

@@ -1,9 +1,10 @@
 defmodule Zero.Mixfile do
   use Mix.Project
 
-  @target System.get_env("MIX_TARGET") || "rpi0"
+  @target System.get_env("MIX_TARGET") || "host"
+
   Mix.shell.info([:green, """
-  Env
+  Mix environment
     MIX_TARGET:   #{@target}
     MIX_ENV:      #{Mix.env}
   """, :reset])
@@ -16,7 +17,7 @@ defmodule Zero.Mixfile do
      version: "0.1.0",
      elixir: "~> 1.4.0",
      target: @target,
-     archives: [nerves_bootstrap: "~> 0.3"],
+     archives: [nerves_bootstrap: "~> 0.4"],
      deps_path: "deps/#{@target}",
      build_path: "_build/#{@target}",
      build_embedded: Mix.env == :prod,
@@ -60,12 +61,9 @@ defmodule Zero.Mixfile do
   def deps("host"), do: []
   def deps("rpi0") do
     [{:nerves_system_rpi0, "~> 0.15", runtime: false},
-     {:nerves_runtime, "~> 0.3"},
+     {:nerves_runtime, "~> 0.4"},
      {:bootloader, "~> 0.1"},
-     {:nerves_init_zero, github: "fhunleth/nerves_init_zero", branch: "master"},
-     {:picam, "~> 0.1"},
-     {:cowboy, "~> 1.0.0"},
-     {:plug, "~> 1.0"}]
+     {:nerves_init_gadget, github: "fhunleth/nerves_init_gadget", branch: "ssh"}]
   end
 
   # We do not invoke the Nerves Env when running on the Host

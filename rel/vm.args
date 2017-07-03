@@ -1,9 +1,21 @@
 ## Add custom options here
 
+## Distributed Erlang Options
+##  The cookie needs to be configured prior to vm boot for
+##  for read only filesystem.
+
+# -name nerves_cam@0.0.0.0
+-setcookie EKZRklVBKZlmh7bspKfd/6n50WZTTj7klKJThTYd0nZt9Fvf5XOIaHIOU/ZH9ZAn
+
+## Use Ctrl-C to interrupt the current shell rather than invoking the emulator
+## break handler and possibly exiting the VM.
++Bc
+
 ## Start the Elixir shell
+
 -noshell
 -user Elixir.IEx.CLI
--extra --no-halt
 
-## Options added here are interpreted as plain arguments and
+## Options added after -extra are interpreted as plain arguments and
 ## can be retrieved using :init.get_plain_arguments().
+-extra --no-halt
