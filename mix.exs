@@ -63,7 +63,7 @@ defmodule Zero.Mixfile do
     [{:nerves_system_rpi0, "~> 0.15", runtime: false},
      {:nerves_runtime, "~> 0.4"},
      {:bootloader, "~> 0.1"},
-     {:nerves_init_gadget, github: "fhunleth/nerves_init_gadget", branch: "ssh"}]
+     {:nerves_init_gadget, github: "fhunleth/nerves_init_gadget", branch: "master"}]
   end
 
   # We do not invoke the Nerves Env when running on the Host
