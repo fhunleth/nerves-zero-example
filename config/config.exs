@@ -8,8 +8,8 @@ use Mix.Config
 config :nerves_network,
   regulatory_domain: "US"
 
-config :nerves, :firmware,
-  rootfs_additions: "rootfs-additions"
+#config :nerves, :firmware,
+  #rootfs_additions: "rootfs-additions"
 
 # Boot the bootloader first and have it start our app.
 config :bootloader,
