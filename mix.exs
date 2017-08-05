@@ -53,7 +53,7 @@ defmodule Zero.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   def deps do
-    [{:nerves, "~> 0.6.0", runtime: false}] ++
+    [{:nerves, "~> 0.7", runtime: false}] ++
     deps(@target)
   end
 
@@ -63,7 +63,7 @@ defmodule Zero.Mixfile do
     [{:nerves_system_rpi0, "~> 0.15", runtime: false},
      {:nerves_runtime, "~> 0.4"},
      {:bootloader, "~> 0.1"},
-     {:nerves_init_gadget, github: "fhunleth/nerves_init_gadget", branch: "master"}]
+     {:nerves_init_gadget, "~> 0.1"}]
   end
 
   # We do not invoke the Nerves Env when running on the Host
