@@ -11,6 +11,8 @@
 ## break handler and possibly exiting the VM.
 +Bc
 
+-kernel shell_history enabled
+
 ## Start the Elixir shell
 
 -noshell
